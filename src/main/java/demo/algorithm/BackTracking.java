@@ -14,6 +14,7 @@ public class BackTracking {
         return true;
     }
 
+
     public static void back_tracking(int row){
         if (row == n){
             total++;
