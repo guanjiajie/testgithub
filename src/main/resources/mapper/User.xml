@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo.dao.UserDao">
+    <select id="getUserList" resultType="demo.entity.User">
+        select *
+        from jxlvudp.user u
+
+    </select>
+
+    <insert id="insertUser" parameterType="demo.entity.User">
+        insert into jxlvudp.user
+        values(#{id},#{name},#{password},#{sex},#{age},#{telphone},#{email})
+    </insert>
+</mapper>

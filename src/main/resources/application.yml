@@ -1,0 +1,51 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    root: info
+
+mysql:
+  datasource:
+    num: 1    #读库数量
+    type-aliaies-package: demo.dao
+    mapper-locations: classpath:mapper/*.xml
+    config-location: classpath:mybatis/mybatis-location.xml
+    write:
+      url: jdbc:mysql://127.0.0.1:3306/jxlvudp?useUnicode=true&characterEncoding=utf-8&useSSL=true
+      username: root
+      password: 123456789
+      driver-class-name: com.mysql.jdbc.Driver
+    read:
+      url: jdbc:mysql://127.0.0.1:3307/jxlvudp?useUnicode=true&characterEncoding=utf-8&useSSL=true
+      username: root
+      password: 123456789
+      driver-class-name: com.mysql.jdbc.Driver
+
+#spring:
+ # datasource:
+  #  url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+   # username: root
+    #password: 123456789
+    #driver-class-name: com.mysql.jdbc.Driver
+
+#context:
+#  listener:
+#    classes: demo.listener.MyListener3
+
+type-aliases-package: demo.entity
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 1
+    timeout: 5000ms
+    jedis:
+      pool:
+        max-active: 50
+        max-wait: 3000ms
+        max-idle: 20
+        min-idle: 2
+
+
